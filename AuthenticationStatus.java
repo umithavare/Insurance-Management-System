@@ -1,2 +1,4 @@
-public class AuthenticationStatus {
+public enum AuthenticationStatus {
+    SUCCESS,
+    FAIL;
 }

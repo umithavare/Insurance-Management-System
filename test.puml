@@ -1,0 +1,111 @@
+@startuml
+'https://plantuml.com/class-diagram
+@startuml
+
+abstract class Account {
+  - authenticationStatus: AuthenticationStatus
+  - user: User
+  - insurances: ArrayList<Insurance>
+
+  + login(email: String, password: String): void
+  + addAddress(address: Address): void
+  + removeAddress(address: Address): void
+  + getAuthenticationStatus(): AuthenticationStatus
+  + addInsurance(insurance: Insurance): abstract void
+  + showUserInfo(): final void
+}
+
+class User {
+  - name: String
+  - surname: String
+  - email: String
+  - password: String
+  - profession: String
+  - age: int
+  - addresses: ArrayList<Address>
+  - lastLoginDate: Date
+
+  + User(name: String, surname: String, email: String, password: String, profession: String, age: int)
+  + addAddress(address: Address): void
+  + removeAddress(address: Address): void
+}
+
+interface Address {
+  + getStreet(): String
+  + getCity(): String
+  + getPostalCode(): String
+  + getAddressType(): String
+}
+
+class HomeAddress {
+  + getAddressType(): String
+}
+
+class BusinessAddress {
+  + getAddressType(): String
+}
+
+class AddressManager {
+  + static addAddress(user: User, address: Address): void
+  + static removeAddress(user: User, address: Address): void
+}
+
+abstract class Insurance {
+  - name: String
+  - fee: double
+  - startDate: Date
+  - endDate: Date
+
+  + abstract calculate(): double
+}
+
+class HealthInsurance {
+  + calculate(): double
+}
+
+class ResidenceInsurance {
+  + calculate(): double
+}
+
+class TravelInsurance {
+  + calculate(): double
+}
+
+class CarInsurance {
+  + calculate(): double
+}
+
+class AccountManager {
+  - accounts: TreeSet<Account>
+
+  + login(email: String, password: String): Account
+}
+
+class InvalidAuthenticationException {
+  + getMessage(): String
+}
+
+enum AuthenticationStatus {
+  SUCCESS
+  FAIL
+}
+
+Account -- AuthenticationStatus
+Account -- User
+Account -- Insurance
+User -- Address
+Address <|.. HomeAddress
+Address <|.. BusinessAddress
+AddressManager -- User
+Insurance <|-- HealthInsurance
+Insurance <|-- ResidenceInsurance
+Insurance <|-- TravelInsurance
+Insurance <|-- CarInsurance
+AccountManager -- Account
+AccountManager ..> Address
+AccountManager ..> AuthenticationStatus
+
+@enduml
+
+
+@enduml
