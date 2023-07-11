@@ -1,22 +1,25 @@
 import javax.xml.namespace.QName;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public abstract class Insurance {
     private String name;
     private Double fee;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
     Calendar calendar = Calendar.getInstance();
 
-    public Insurance(String name,  Date startDate, Date endDate) {
+    public Insurance(String name,Double fee, LocalDate startDate, LocalDate endDate) {
         this.name = name;
+        this.fee = fee;
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
-    public abstract void calculate();
+
 
     public String getName() {
         return name;
@@ -34,19 +37,21 @@ public abstract class Insurance {
         this.fee = fee;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
+
+    public abstract void calculate(String insuranceType);
 }
