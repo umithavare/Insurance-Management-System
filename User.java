@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class User {
+public class User extends AdressManager{
     private String name;
     private String surname;
     private String email;
@@ -23,12 +23,21 @@ public class User {
 
     }
 
+
     public void addAdress(IAdress adress){
-        adresses.add(adress);
+        AdressManager.addAdress(this,adress);
     }
 
     public void removeAdress(IAdress adress){
-        adresses.remove(adress);
+        AdressManager.removeAdress(this,adress);
+    }
+
+    public ArrayList<IAdress> getAdresses() {
+        return adresses;
+    }
+
+    public void setAdresses(ArrayList<IAdress> adresses) {
+        this.adresses = adresses;
     }
 
     public String getName() {
