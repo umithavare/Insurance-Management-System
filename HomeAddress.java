@@ -40,4 +40,11 @@ public class HomeAddress implements IAdress{
     public String getAdressType() {
         return "Home Adress";
     }
+    @Override
+    public String toString(){
+        return "Home adress :  [ street: " + street + " city: " + city +
+                " postal code: " + postalCode + " ]";
+    }
 }
+
+

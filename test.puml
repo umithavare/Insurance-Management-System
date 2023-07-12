@@ -56,7 +56,7 @@ abstract class Insurance {
   - startDate: Date
   - endDate: Date
 
-  + abstract calculate(): double
+  + abstract calculate(String insuranceType): void
 }
 
 class HealthInsurance {

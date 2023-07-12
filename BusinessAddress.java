@@ -40,4 +40,10 @@ public class BusinessAddress implements IAdress{
     public String getAdressType() {
         return "Business Adres";
     }
+
+    @Override
+    public String toString(){
+        return "Business adress :  [ street: " + street + " city: " + city +
+                " postal code: " + postalCode + " ]";
+    }
 }
