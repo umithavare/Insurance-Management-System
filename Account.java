@@ -31,6 +31,16 @@ public abstract class Account implements Comparable<Account> {
         System.out.println("Password: " + user.getPassword());
         System.out.println("Profession: " + user.getProfession());
         System.out.println("Age: " + user.getAge());
+        System.out.println("Adresses;");
+        for (IAdress adress : user.getAdresses()){
+            System.out.println(adress);
+        }
+
+        System.out.println("Insurances;");
+        for (Insurance insurance : insurances){
+            System.out.println(insurance);
+        }
+
 
     }
 
