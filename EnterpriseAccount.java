@@ -69,7 +69,6 @@ public class EnterpriseAccount extends Account{
 
     }
 
-
     private boolean checkInsurance(Insurance insurance){
         for (Insurance i : getUser().getInsuranceList()){
             if (i.getName().equals(insurance.getName())){
@@ -81,6 +80,6 @@ public class EnterpriseAccount extends Account{
 
     @Override
     public int compareTo(Account other) {
-        return super.compareTo(other);
+        return this.getUser().getName().compareTo(other.getUser().getName());
     }
 }
