@@ -5,7 +5,7 @@ public class IndividualAccount extends Account{
     }
 
     @Override
-    public void addInsurance(Insurance insurance) {
+    public void addInsurance() {
 
     }
 }

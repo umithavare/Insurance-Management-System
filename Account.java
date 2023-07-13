@@ -61,7 +61,7 @@ public abstract class Account implements Comparable<Account> {
         }
     }
 
-    public abstract void addInsurance(Insurance insurance);
+    public abstract void addInsurance();
 
     @Override
     public int compareTo(Account other) {

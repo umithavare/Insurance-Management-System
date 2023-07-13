@@ -9,6 +9,8 @@ public class User extends AdressManager{
     private String profession;
     private int age;
     private ArrayList<IAdress> adresses;
+    private ArrayList<Insurance> insuranceList;
+    private Insurance insurance;
     private Date lastLoginDate;
 
     public User(String name, String surname, String email,
@@ -30,6 +32,22 @@ public class User extends AdressManager{
 
     public void removeAdress(IAdress adress){
         AdressManager.removeAdress(this,adress);
+    }
+
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
+    }
+
+    public ArrayList<Insurance> getInsuranceList() {
+        return insuranceList;
+    }
+
+    public void setInsuranceList(ArrayList<Insurance> insuranceList) {
+        this.insuranceList = insuranceList;
     }
 
     public ArrayList<IAdress> getAdresses() {
