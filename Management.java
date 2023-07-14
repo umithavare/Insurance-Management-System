@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Management {
     private AccountManager accountManager;
 
@@ -23,7 +22,17 @@ public class Management {
                         String email,String password, String profession, int age){
         User user = new User(name, surname, email, password, profession, age);
         if (userType.equalsIgnoreCase("I")){
-            Account account = new AccountManager()
+            Account account = new IndividualAccount(user);
+            accountManager.addAccount(account);
+            System.out.println("User added succesfuly");
+        }
+        else if (userType.equalsIgnoreCase("E")){
+            Account account = new EnterpriseAccount(user);
+            accountManager.addAccount(account);
+            System.out.println("Used added succesfuly");
+        }
+        else {
+            System.out.println("Invalid user type, try again");
         }
     }
 

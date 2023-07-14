@@ -22,7 +22,7 @@ public class User extends AdressManager{
         this.profession = profession;
         this.age = age;
         this.adresses = new ArrayList<>();
-
+        this.insuranceList = new ArrayList<>();
     }
 
 

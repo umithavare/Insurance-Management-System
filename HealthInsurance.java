@@ -4,8 +4,9 @@ import java.util.Date;
 public class HealthInsurance extends Insurance{
 
 
-    public HealthInsurance(String insuranceType) {
+    public HealthInsurance(String insuranceType ) {
         super("Health Insurance", 150.0, LocalDate.now(), LocalDate.now().plusYears(1));
+
         calculate(insuranceType);
     }
 

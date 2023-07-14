@@ -19,11 +19,12 @@ public class EnterpriseAccount extends Account{
         Scanner input = new Scanner(System.in);
         switch (input.nextInt()){
             case 1: {
-                if (checkInsurance(new HealthInsurance(enterprise))){
+                if (checkInsurance(new HealthInsurance(enterprise))) {
                     getUser().setInsurance(new HealthInsurance(enterprise));
                     getUser().getInsuranceList().add(getUser().getInsurance());
                     System.out.println("You have new Health insurance");
                 }
+
                 else {
                     System.out.println("You already have health insurance");
                 }
